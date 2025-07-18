@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Escáner QR</string>
+    <string name="onboarding_slogan">Disfruta de todas las funciones Premium gratis – Sin anuncios</string>
+    <string name="get_started">Empezar</string>
+    <string name="scan_qr">Escanear QR</string>
+    <string name="generate_qr">Generar QR</string>
+    <string name="batch_scan">Escaneo por lotes</string>
+    <string name="history">Historial</string>
+    <string name="home_screen">Pantalla de inicio</string>
+    <string name="enter_text_to_generate">Introduce texto para generar el código QR</string>
+    <string name="generate_qr_code">Generar código QR</string>
+    <string name="clear_history">Borrar historial</string>
+    <string name="close">Cerrar</string>
+</resources>

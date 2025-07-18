@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Scanner de QR</string>
+    <string name="onboarding_slogan">Aproveite todos os recursos Premium de graça – Sem anúncios</string>
+    <string name="get_started">Começar</string>
+    <string name="scan_qr">Digitalizar QR</string>
+    <string name="generate_qr">Gerar QR</string>
+    <string name="batch_scan">Digitalização em lote</string>
+    <string name="history">Histórico</string>
+    <string name="home_screen">Tela inicial</string>
+    <string name="enter_text_to_generate">Digite o texto para gerar o código QR</string>
+    <string name="generate_qr_code">Gerar código QR</string>
+    <string name="clear_history">Limpar histórico</string>
+    <string name="close">Fechar</string>
+</resources>

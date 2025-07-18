@@ -1,3 +1,14 @@
 <resources>
-    <string name="app_name">QRcanner</string>
+    <string name="app_name">QR Scanner</string>
+    <string name="onboarding_slogan">Enjoy All Premium Features Free – No Ads</string>
+    <string name="get_started">Get Started</string>
+    <string name="scan_qr">Scan QR</string>
+    <string name="generate_qr">Generate QR</string>
+    <string name="batch_scan">Batch Scan</string>
+    <string name="history">History</string>
+    <string name="home_screen">Home Screen</string>
+    <string name="enter_text_to_generate">Enter text to generate QR code</string>
+    <string name="generate_qr_code">Generate QR Code</string>
+    <string name="clear_history">Clear History</string>
+    <string name="close">Close</string>
 </resources>

@@ -3,45 +3,52 @@ package com.kottland.qrcanner
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import com.kottland.qrcanner.ui.theme.QRcannerTheme
+import com.kottland.qrcanner.view.OnboardingScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContent {
             QRcannerTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                AppNavigation()
             }
         }
     }
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    QRcannerTheme {
-        Greeting("Android")
+fun AppNavigation() {
+    val navController = rememberNavController()
+    NavHost(navController = navController, startDestination = "onboarding") {
+        composable("onboarding") {
+            OnboardingScreen(navController = navController)
+        }
+        composable("home") {
+            HomeScreen(navController = navController)
+        }
+        composable("scanner") {
+            ScannerScreen(navController = navController)
+        }
+        composable("scan_result/{content}") { backStackEntry ->
+            val content = backStackEntry.arguments?.getString("content") ?: ""
+            ScanResultScreen(navController = navController, content = content)
+        }
+        composable("generator") {
+            GeneratorScreen()
+        }
+        composable("batch_scan") {
+            // BatchScanScreen will be implemented later
+        }
+        composable("history") {
+            HistoryScreen()
+        }
+        composable("settings") {
+            SettingsScreen()
+        }
     }
 }
