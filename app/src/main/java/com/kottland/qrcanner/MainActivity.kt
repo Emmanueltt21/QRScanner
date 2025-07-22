@@ -8,7 +8,15 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.kottland.qrcanner.ui.theme.QRcannerTheme
+import com.kottland.qrcanner.view.GeneratorScreen
+import com.kottland.qrcanner.view.HistoryScreen
+import com.kottland.qrcanner.view.HomeScreen
 import com.kottland.qrcanner.view.OnboardingScreen
+import com.kottland.qrcanner.view.ScanResultScreen
+import com.kottland.qrcanner.view.ScannerScreen
+import com.kottland.qrcanner.view.SettingsScreen
+import com.kottland.qrcanner.view.AboutUsScreen
+import com.kottland.qrcanner.view.BatchScanScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,13 +50,16 @@ fun AppNavigation() {
             GeneratorScreen()
         }
         composable("batch_scan") {
-            // BatchScanScreen will be implemented later
+            BatchScanScreen(navController = navController)
         }
         composable("history") {
             HistoryScreen()
         }
         composable("settings") {
             SettingsScreen()
+        }
+        composable("about_us") {
+            AboutUsScreen(navController = navController)
         }
     }
 }
