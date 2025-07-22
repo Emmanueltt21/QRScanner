@@ -9,6 +9,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.kottland.qrcanner.ui.theme.QRcannerTheme
 import com.kottland.qrcanner.view.GeneratorScreen
+import com.kottland.qrcanner.view.HistoryDetailScreen
 import com.kottland.qrcanner.view.HistoryScreen
 import com.kottland.qrcanner.view.HomeScreen
 import com.kottland.qrcanner.view.OnboardingScreen
@@ -53,13 +54,17 @@ fun AppNavigation() {
             BatchScanScreen(navController = navController)
         }
         composable("history") {
-            HistoryScreen()
+            HistoryScreen(navController = navController)
         }
         composable("settings") {
             SettingsScreen()
         }
         composable("about_us") {
             AboutUsScreen(navController = navController)
+        }
+        composable("history_detail/{id}") { backStackEntry ->
+            val id = backStackEntry.arguments?.getString("id")?.toIntOrNull() ?: return@composable
+            HistoryDetailScreen(id = id, navController = navController)
         }
     }
 }
